@@ -1,0 +1,182 @@
+// Navigation styles
+
+#topBar {
+	p {
+		margin: 0;
+	}
+
+	a {
+		display: inline-block;
+		padding: 10px 0;
+	}
+
+	i,svg {
+		margin-right: 0.5em;
+	}
+
+	.info-left,
+	.info-right {
+		text-align: center;
+	}
+
+	.info-left {
+		@media (min-width: @md-screen) {
+			text-align: left;
+		}
+	}
+
+	.info-right {
+		@media (min-width: @md-screen) {
+			text-align: right;
+		}
+	}
+}
+
+.header {
+	background: @brand-color;
+	position: relative;
+
+	&-wrap {
+	}
+
+	&.fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+
+	.navigation {
+
+		.menu {
+			display: none;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			flex-direction: column;
+			position: absolute;
+			top: 100%;
+			right: 0;
+			width: 100%;
+			max-width: 350px;
+			background: @brand-color;
+			z-index: 10;
+
+			@media (min-width: @md-screen) {
+				display: flex;
+				flex-direction: row;
+				max-width: 100%;
+				position: relative;
+				top: 0;
+				right: -15px;
+
+			}
+
+			&.active {
+				display: flex;
+			}
+
+			> li {
+				border-top: 1px solid rgba(0, 0, 0, 0.2);
+				position: relative;
+
+				@media (min-width: @md-screen) {
+					margin-left: 2em;
+					border: 0;
+
+					&:first-of-type {
+						margin: 0;
+					}
+				}
+
+				@media (min-width: @md-screen) {
+					&:hover {
+						.sub-menu {
+							display: block;
+						}
+					}
+				}
+
+				a {
+					color: #FFF;
+					display: block;
+					padding: 10px 15px;
+
+					@media (min-width: @md-screen) {
+						padding: 30px 15px;
+					}
+
+					&:hover {
+						background: rgba(255,255,255,0.2);
+					}
+
+					.sub-menu-toggle {
+						position: absolute;
+						right: 0;
+						top: 0;
+						background: transparent;
+						border: 0;
+						padding: 10px 20px;
+						border-left: 1px solid rgba(0,0,0,0.2);
+
+						@media (min-width: @md-screen) {
+							padding: 0;
+							border: 0;
+							position: relative;
+							margin-left: 15px;
+						}
+					}
+				}
+			}
+
+			.sub-menu {
+				display: none;
+				position: relative;
+				top: 100%;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				background: @brand-color;
+				min-width: 100%;
+
+				@media (min-width: @md-screen) {
+					position: absolute;
+				}
+
+				a {
+					padding: 10px 15px;
+					border-top: 1px solid rgba(0,0,0,0.2);
+
+					@media (min-width: @md-screen) {
+						border: 0;
+					}
+				}
+			}
+		}
+
+		#menuToggle {
+			background: transparent;
+			border: 0;
+			color: #FFF;
+			padding: 30px;
+			border-left: 1px solid rgba(0,0,0,0.2);
+			margin-right: -15px;
+
+			@media (min-width: @md-screen) {
+				display: none;
+			}
+
+			.bar {
+				display: block;
+				width: 25px;
+				height: 2px;
+				background: #FFF;
+				margin-bottom: 8px;
+
+				&:last-child {
+					margin: 0;
+				}
+			}
+		}
+	}
+}

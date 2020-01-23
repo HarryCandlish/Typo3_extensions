@@ -1,0 +1,17 @@
+{namespace dce=ArminVieweg\Dce\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+    <div class="row">
+        <div class="row">
+            <div class="accordion flex flex-wrap">
+                <f:for each="{field.blocks}" as="block" iteration="iterator">
+                    <div class="col-xs-12 item {field.tabColour}">
+                        <div class="title"><div class="name">{block.title}</div> <span class="glyphicon glyphicon-plus"></span></div>
+                        <div class="info"><f:format.html>{block.bodytext}</f:format.html></div>
+                    </div>
+                </f:for>
+            </div>
+        </div>
+    </div>
+</f:section>

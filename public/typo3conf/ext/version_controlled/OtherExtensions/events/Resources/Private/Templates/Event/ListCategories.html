@@ -1,0 +1,14 @@
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <ul>
+        <li>
+            <f:link.typolink parameter="{settings.showAllEventsPageId}" class="{f:if(condition: '!{activeCategory}', then: 'active')}">All</f:link.typolink>
+        </li>
+        <f:for each="{eventCategories}" as="eventCategory">
+            <li>
+                <f:link.action arguments="{eventCategory:eventCategory}" pageUid="{settings.listEventsByCategoryPageId}" class="{f:if(condition: '{activeCategory} == {eventCategory}', then: 'active')}">{eventCategory.title}</f:link.action>
+            </li>
+        </f:for>
+    </ul>
+</f:section>

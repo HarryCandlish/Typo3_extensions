@@ -1,0 +1,56 @@
+# Leave off caching off when editing css or less
+config.cache = 0
+config.extTarget = _blank
+config.fileTarget = _blank
+
+# realurl config
+config {
+    simulateStaticDocuments = 0
+    absRefPrefix = /
+    tx_realurl_enable = 1
+    doctype = html5
+    baseURL = /
+}
+
+# Changes the Favicon
+# page.shortcutIcon = fileadmin/template/img/favicon.png
+
+# Add Custom stylesheets
+page.includeCSS {
+    mycustomless = EXT:version_controlled/Resources/Private/less/style.less
+    myfont = https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900
+}
+
+# Add Javascript file
+page.includeJSFooter {
+    scripts = EXT:version_controlled/Resources/Public/js/functions.js
+    banner = EXT:version_controlled/Resources/Public/js/banner-settings.js
+    video = EXT:version_controlled/Resources/Public/js/video-popup.js
+}
+
+# Append HTML to <head> e.g. GoogleTagManager
+# FontAwesome 5 - available packs: solid, light, regular, brands
+page.headerData.2 = TEXT
+page.headerData.2.value (
+    <script defer src="/typo3conf/ext/version_controlled/Resources/Public/js/fa/bundles/everything.min.js"></script>
+    <script defer src="/typo3conf/ext/version_controlled/Resources/Public/js/fa/fontawesome.min.js"></script>
+)
+
+# Append HTML to top of <body> e.g. GoogleTagManager
+page.bodyTagCObject.stdWrap.append = TEXT
+page.bodyTagCObject.stdWrap.append.value (
+)
+
+# Other
+config.contentObjectExceptionHandler = 0
+
+page.includeCSS.theme = EXT:version_controlled/OtherExtensions/bootstrap_package/Resources/Public/Less/Theme/theme.less
+
+[request.getQueryParams()['tx_news_pi1'] !== null && request.getQueryParams()['tx_news_pi1']['news'] !== null]
+    page.meta.og:title >
+    page.meta.og:site_name >
+    page.meta.og:description >
+    page.meta.og:image >
+[END]
+plugin.tx_news.settings.displayDummyIfNoMedia = 0
+plugin.tx_bootstrappackage.settings.cssSourceMapping = 1

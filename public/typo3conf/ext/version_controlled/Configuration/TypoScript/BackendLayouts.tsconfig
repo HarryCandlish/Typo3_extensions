@@ -1,0 +1,1 @@
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:version_controlled/Configuration/TsConfig/Page/BackendLayouts" extensions="tsconfig">

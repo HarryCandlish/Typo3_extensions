@@ -1,0 +1,24 @@
+{namespace dce=ArminVieweg\Dce\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+    <div class="container conference-body conference-programme">
+        <f:for each="{field.sessions}" as="session">
+            <div class="row session">
+                <div class="col-xs-12 col-sm-4 col-md-3 sess-details-wrap">
+                    <div class="sess-details sess-cell">
+                        <h4 class="sess-time">{session.time}</h4>
+                        <f:if condition="{session.name}"><h5 class="sess-name">{session.name}</h5></f:if>
+                        <f:if condition="{session.duration}"><p class="sess-duration">({session.duration})</p></f:if>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-8 col-md-9 sess-content-wrap">
+                    <div class="sess-content sess-cell">
+                        <f:format.html>{session.content}</f:format.html>
+                    </div>
+                </div>
+            </div>
+        </f:for>
+    </div>
+</f:section>

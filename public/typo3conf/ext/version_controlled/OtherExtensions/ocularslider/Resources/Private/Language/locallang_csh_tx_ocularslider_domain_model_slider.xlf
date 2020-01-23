@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-10-12T16:27:05Z" product-name="ocularslider">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="slides.description">
+				<source>slides</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

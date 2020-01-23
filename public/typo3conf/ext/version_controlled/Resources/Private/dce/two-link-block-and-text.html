@@ -1,0 +1,65 @@
+{namespace dce=ArminVieweg\Dce\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+    <div class="row">
+        <div class="link-block-2 flex flex-wrap">
+            <f:for each="{field.blocks}" as="block" iteration="iterator">
+                <f:if condition="{field.blocks -> f:count()} == 1">
+                    <f:then>
+                        <div class="col-xs-12 no-padding link-block-container">
+                            <div class="set-text underline">
+                                <div class="title">{block.title}</div>
+                                <div class="body-text">
+                                    <f:format.html>{block.bodytext}</f:format.html>
+                                </div>
+
+                                <f:if condition="{block.link}">
+                                    <f:then>
+                                        <div class="read-more"><f:link.typolink parameter="{block.link}">Read More</f:link.typolink></div>
+                                    </f:then>
+                                </f:if>
+                            </div>
+                        </div>
+                    </f:then>
+                    <f:else>
+                        <f:if condition="{field.blocks -> f:count()} == 2">
+                            <f:then>
+                                <div class="col-xs-12 col-md-6 no-padding link-block-container flex">
+                                    <div class="set-text underline">
+                                        <div class="title">{block.title}</div>
+                                        <div class="body-text">
+                                            <f:format.html>{block.bodytext}</f:format.html>
+                                        </div>
+
+                                        <f:if condition="{block.link}">
+                                            <f:then>
+                                                <div class="read-more"><f:link.typolink parameter="{block.link}">Read More</f:link.typolink></div>
+                                            </f:then>
+                                        </f:if>
+                                    </div>
+                                </div>
+                            </f:then>
+                            <f:else>
+                                <div class="col-xs-12 col-md-6 no-padding link-block-container flex">
+                                    <div class="set-text underline">
+                                        <div class="title">{block.title}</div>
+                                        <div class="body-text">
+                                            <f:format.html>{block.bodytext}</f:format.html>
+                                        </div>
+
+                                        <f:if condition="{block.link}">
+                                            <f:then>
+                                                <div class="read-more"><f:link.typolink parameter="{block.link}">Read More</f:link.typolink></div>
+                                            </f:then>
+                                        </f:if>
+                                    </div>
+                                </div>
+                            </f:else>
+                        </f:if>
+                    </f:else>
+                </f:if>
+            </f:for>
+        </div>
+    </div>
+</f:section>

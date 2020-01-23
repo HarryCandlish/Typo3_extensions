@@ -1,0 +1,23 @@
+{
+    "name": "product/productview",
+    "type": "typo3-cms-extension",
+    "description": "production overview",
+    "authors": [],
+    "require": {
+        "typo3/cms-core": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Product\\Productview\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Product\\Productview\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "product/productview": "self.version",
+        "typo3-ter/productview": "self.version"
+    }
+}

@@ -1,0 +1,16 @@
+
+order deny,allow
+deny from all
+AuthName "Test website"
+AuthType Basic
+AuthUserFile /home/src/.htpasswd
+#AuthGroupFile /dev/null
+require user client
+Allow from 192.168
+Allow from 10.111
+Allow from 125.236.227.101
+Allow from 203.97.197.61
+Allow from 123.255.47.134
+Allow from 125.236.227.101
+Satisfy Any
+

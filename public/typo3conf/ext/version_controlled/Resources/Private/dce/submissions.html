@@ -1,0 +1,23 @@
+{namespace dce=ArminVieweg\Dce\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+    <div class="row submissions-heading">
+        <div class="col-xs-12">
+            <h2>{field.heading}</h2>
+        </div>
+    </div>
+
+    <div class="row submissions-wrap">
+        <f:for each="{field.documents}" as="document">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="submission">
+                    <f:link.typolink parameter="{document.file}">
+                        <h3>{document.title}</h3>
+                        <button>View File</button>
+                    </f:link.typolink>
+                </div>
+            </div>
+        </f:for>
+    </div>
+</f:section>

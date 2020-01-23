@@ -1,0 +1,19 @@
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <div class="container-fluid">
+        <ul class="row">
+            <f:widget.paginate objects="{events}" as="paginatedEvents" configuration="{itemsPerPage: settings.paginationMaxEventsPerPage}">
+                <f:for each="{events}" as="event">
+                    <li class="col-xs-12 col-sm-4">
+                        <f:link.action arguments="{event:event}" pageUid="{settings.showSingleEventPageId}" pluginName="ShowEvent">
+                            {event.name}
+                        </f:link.action>
+    
+                        <p>{event.teaser}</p>
+                    </li>
+                </f:for>
+            </f:widget.paginate>
+        </ul>
+    </div>
+</f:section>

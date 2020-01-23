@@ -1,0 +1,54 @@
+{namespace dce=ArminVieweg\Dce\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+    <div class="row">
+        <div class="link-block flex flex-wrap">
+            <f:for each="{field.blocks}" as="block" iteration="iterator">
+                <f:if condition="{field.blocks -> f:count()} == 1">
+                    <f:then>
+                        <div class="col-xs-12 no-padding">
+                            <f:link.typolink parameter="{block.url}"><div class="name">{block.title}</div></f:link.typolink>
+                        </div>
+                    </f:then>
+                    <f:else>
+                        <f:if condition="{field.blocks -> f:count()} == 2">
+                            <f:then>
+                                <div class="col-xs-12 col-md-6 no-padding flex">
+                                    <f:link.typolink parameter="{block.url}"><div class="name">{block.title}</div></f:link.typolink>
+                                </div>
+                            </f:then>
+                            <f:else>
+                                <f:if condition="{field.blocks -> f:count()} == 3">
+                                    <f:then>
+                                        <div class="col-xs-12 col-md-4 no-padding flex">
+                                            <f:link.typolink parameter="{block.url}"><div class="name">{block.title}</div></f:link.typolink>
+                                        </div>
+                                    </f:then>
+                                    <f:else>
+                                        <f:if condition="{field.blocks -> f:count()} == 4">
+                                            <f:then>
+                                                <div class="col-xs-12 col-md-3 no-padding flex">
+                                                    <f:link.typolink parameter="{block.url}"><div class="name">{block.title}</div></f:link.typolink>
+                                                </div>
+                                            </f:then>
+                                            <f:else>
+                                                <f:if condition="{field.blocks -> f:count()} > 4">
+                                                    <f:then>
+                                                        <div class="col-xs-12 col-md-2-4 no-padding flex">
+                                                            <f:link.typolink parameter="{block.url}"><div class="name">{block.title}</div></f:link.typolink>
+                                                        </div>
+                                                    </f:then>
+                                                </f:if>
+                                            </f:else>
+                                        </f:if>
+                                    </f:else>
+                                </f:if>
+                            </f:else>
+                        </f:if>
+                    </f:else>
+                </f:if>
+            </f:for>
+        </div>
+    </div>
+</f:section>

@@ -1,0 +1,29 @@
+{namespace dce=ArminVieweg\Dce\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+    <div class="teamMembers">
+        <div class="flex flex-wrap">
+            <f:for each="{field.teamMembers}" as="member">
+                <div class="memberContainer">
+                    <div class="member flex flex-wrap">
+                        <div class="photoContainer">
+                            <f:for each="{member.photo}" as="photo" iteration="iterator">
+                                <div class="hidden-xs hidden-sm">
+                                    <f:image image="{photo}" maxWidth="150" maxHeight="150" style="max-width: 100%; height: auto;" />
+                                </div>
+                                <div class="hidden-md hidden-lg">
+                                    <f:image image="{photo}" maxWidth="950" maxHeight="950" style="max-width: 100%; height: auto;"/>
+                                </div>
+                            </f:for>
+                        </div>
+                        <div class="informationContainer">
+                            <div class="name h3">{member.name}</div>
+                            <div class="body"><f:format.html>{member.body}</f:format.html></div>
+                        </div>
+                    </div>
+                </div>
+            </f:for>
+        </div>
+    </div>
+</f:section>

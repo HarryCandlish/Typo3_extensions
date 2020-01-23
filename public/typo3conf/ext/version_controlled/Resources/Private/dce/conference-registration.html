@@ -1,0 +1,23 @@
+{namespace dce=ArminVieweg\Dce\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+    <div class="row">
+        <f:for each="{field.sections}" as="section" iteration="iterator">
+            <f:if condition="{iterator.isOdd}">
+                <![CDATA[<div class="row">]]>
+            </f:if>
+
+            <div class="col-xs-12 col-md-6">
+                <div class="text-section">
+                    <h1>{section.heading}</h1>
+                    <f:format.html>{section.body}</f:format.html>
+                </div>
+            </div>
+
+            <f:if condition="{iterator.isEven}">
+                <![CDATA[</div>]]>
+            </f:if>
+        </f:for>
+    </div>
+</f:section>

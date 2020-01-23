@@ -1,0 +1,56 @@
+#typo3 localconf file
+/public/typo3conf/LocalConfiguration.php
+/public/typo3conf/PackageStates.php
+/public/typo3conf/ENABLE_INSTALL_TOOL
+
+#.htaccess
+.htaccess
+
+#no temp files
+/public/typo3temp/
+_processed_/
+
+#no typo3 src files
+/public/typo3
+t3lib
+/public/index.php
+typo3_src
+
+#other
+awstats-icon
+awstatsicons
+icon/
+*.swp
+*.sql
+*.tgz
+*.zip
+*.gz
+autoload
+autoload2
+!ext_tables.sql
+
+#no typo3conf/ext
+/public/typo3conf/ext/*
+!/public/typo3conf/ext/version_controlled/
+
+# no profile folder contents
+/awstats
+/.awstats-htpasswd
+/.bash_logout
+/.bashrc
+/cgi-bin
+/.cloud-locale-test.skip
+/etc
+/fcgi-bin
+/homes
+/logs
+/Maildir
+/.profile
+/ssl.*
+/.stats-htpasswd
+/tmp
+/var
+/vendor
+/virtualmin-backup
+/.virtualmin-src
+/public/stats

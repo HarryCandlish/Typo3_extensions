@@ -1,0 +1,10 @@
+{namespace dce=ArminVieweg\Dce\ViewHelpers}
+
+<f:if condition="{field.targetid}">
+    <f:then>
+        <a href="/" onclick="return false;" data-targetid="{field.targetid}" class="conference_menu_item scrollclick">{field.title}</a>
+    </f:then>
+    <f:else>
+        <a href="/" class="conference_menu_item">{field.title}</a>
+    </f:else>
+</f:if>

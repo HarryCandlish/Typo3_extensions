@@ -1,0 +1,27 @@
+{namespace dce=ArminVieweg\Dce\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+    <div class="reports">
+        <div class="row">
+            <f:for each="{field.report}" as="report" iteration="iterator" reverse="1">
+                <div class="col-xs-12 col-sm-4 col-md-3 report repeat">
+                    <div class="flex flex-wrap">
+                        <div class="thumbnailImage">
+                            <f:image src="fileadmin{report.thumbnail.0.identifier}" alt="" />
+                            <div class="h4 title">{report.title}</div>
+                            <div class="data">
+                                <span class="ext">{report.file.0.properties.extension}</span>
+                                |
+                                <span class="size">{report.file.0.properties.size}</span>
+                            </div>
+                            <div class="download">
+                                <a href="fileadmin{report.file.0.identifier}" target="_blank">Download File</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </f:for>
+        </div>
+    </div>
+</f:section>

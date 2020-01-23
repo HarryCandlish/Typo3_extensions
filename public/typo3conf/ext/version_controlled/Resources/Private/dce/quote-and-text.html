@@ -1,0 +1,97 @@
+{namespace dce=ArminVieweg\Dce\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+    <div class="quoters">
+        <div class="quote-and-text flex flex-wrap {field.colour}">
+            <f:if condition="{field.position} == 0">
+                <f:then>
+                    <div class="col-xs-12 col-md-6 no-padding set-quote-background flex flex-center">
+                        <div class="set-quote">
+                            <f:if condition="{field.quote}">
+                                <f:then>
+                                    <div class="quote">
+                                        <p>{field.quote}</p>
+                                    </div>
+                                </f:then>
+                            </f:if>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6 no-padding flex flex-center set-text-background">
+                        <div class="set-text">
+                            <div class="underline">
+                                <f:if condition="{field.title}">
+                                    <f:then>
+                                        <f:if condition="{field.titleLink}">
+                                            <f:then>
+                                                <div class="h1 title">
+                                                    <f:link.typolink parameter="{field.titleLink}">{field.title}</f:link.typolink>
+                                                </div>
+                                            </f:then>
+                                            <f:else>
+                                                <div class="h1 title">
+                                                    {field.title}
+                                                </div>
+                                            </f:else>
+                                        </f:if>
+                                    </f:then>
+                                </f:if>
+                                <f:if condition="{field.bodytext}">
+                                    <f:then>
+                                        <div class="body-text">
+                                            <f:format.html>{field.bodytext}</f:format.html>
+                                        </div>
+                                    </f:then>
+                                </f:if>
+                                <f:if condition="{field.buttonLink}">
+                                    <f:then>
+                                        <f:link.typolink parameter="{field.buttonLink}" class="img-but">{field.buttonName}</f:link.typolink>
+                                    </f:then>
+                                </f:if>
+                            </div>
+                        </div>
+                    </div>
+                </f:then>
+            </f:if>
+            <f:if condition="{field.position} == 1">
+                <f:then>
+                    <div class="col-xs-12 col-md-6 no-padding flex flex-center set-text-background">
+                        <div class="set-text">
+                            <div class="underline">
+                                <f:if condition="{field.title}">
+                                    <f:then>
+                                        <div class="h1 title">{field.title}</div>
+                                    </f:then>
+                                </f:if>
+                                <f:if condition="{field.bodytext}">
+                                    <f:then>
+                                        <div class="body-text">
+                                            <f:format.html>{field.bodytext}</f:format.html>
+                                        </div>
+                                    </f:then>
+                                </f:if>
+                                <f:if condition="{field.buttonLink}">
+                                    <f:then>
+                                        <f:link.typolink parameter="{field.buttonLink}" class="img-but">{field.buttonName}</f:link.typolink>
+                                    </f:then>
+                                </f:if>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 no-padding flex flex-center set-quote-background">
+                        <div class="set-quote">
+                            <f:if condition="{field.quote}">
+                                <f:then>
+                                    <div class="quote">
+                                        <p>{field.quote}</p>
+                                    </div>
+                                </f:then>
+                            </f:if>
+                        </div>
+                    </div>
+                </f:then>
+            </f:if>
+        </div>
+    </div>
+</f:section>

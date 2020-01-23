@@ -1,0 +1,28 @@
+{namespace dce=ArminVieweg\Dce\ViewHelpers}
+<f:layout name="None" />
+
+<f:section name="main">
+    <div class="row">
+        <div class="image-and-title">
+            <f:for each="{dce:fal(field:'image', contentObject:contentObject)}" as="fileReference" iteration="iterator">
+                <f:link.typolink parameter="{field.link}">
+                    <div class="col-xs-12 no-padding set-image bg-cover" style="background-image: url('{f:uri.image(src:'{fileReference.uid}',treatIdAsReference:'1')}');">
+                        <div class="set-text">
+                            <div class="underline">
+                                <div class="title h1">{field.title}</div>
+                            </div>
+
+                            <div class="body-text">
+                                <f:format.html>{field.bodytext}</f:format.html>
+                            </div>
+                        </div>
+
+                        <div class="read-more">
+                            <span class="linkhold">Read More</span>
+                        </div>
+                    </div>
+                </f:link.typolink>
+            </f:for>
+        </div>
+    </div>
+</f:section>

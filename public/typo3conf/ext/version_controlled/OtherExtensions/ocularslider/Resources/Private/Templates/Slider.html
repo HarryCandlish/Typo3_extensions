@@ -1,0 +1,145 @@
+<div class="ocular-slider-wrap ocular-slider-wrapper {f:if(condition: '{data.layout} == 100', then: 'layout-1', else: '')}{f:if(condition: '{data.layout} == 105', then: 'layout-2', else: '')}{f:if(condition: '{data.layout} == 110', then: 'layout-3', else: '')}">
+    <div id="ocular-slider-{data.uid}" class="ocular-slider" data-uid="{data.uid}" data-dots="{slide.dots}" data-timing="{data.tx_ocularslider_slide_timing}000" data-effect="{data.tx_ocularslider_slide_effect}">
+        <f:for each="{slides}" as="slide" iteration="i">
+            <f:if condition="{slide.displaySlide}">
+                <div class="ocular-slide ocular-slider-item-li {f:if(condition: '{i.cycle} != 1', then: 'slide-hide', else: '')}" id="ocular-slide-{slide.uid}">
+                    <f:switch expression="{slide.slideType}">
+                        <f:case value="0">
+                            <!-- Image Only -->
+                            <f:render partial="Slide/ImageOnly" arguments="{slide:slide,imageMaxWidth:imageMaxWidth}" />
+                        </f:case>
+                        <f:case value="1">
+                            <!-- Image and Text -->
+                            <f:render partial="Slide/ImageText" arguments="{slide:slide,imageMaxWidth:imageMaxWidth}" />
+                        </f:case>
+                        <f:case value="2">
+                            <!-- Video Popup -->
+                            <f:render partial="Slide/Video" arguments="{slide:slide,imageMaxWidth:imageMaxWidth}" />
+                        </f:case>
+                        <f:case value="3">
+                            <!-- HTML -->
+                            <f:render partial="Slide/HtmlContent" arguments="{content:slide.htmlContent}" />
+                        </f:case>
+                        <f:case value="4">
+                            <!-- Database Record -->
+                            <f:render partial="Slide/DatabaseRecord" arguments="{slide:slide, image:slide.databaseRecord, imageTitle: slide.databaseRecord, imageText:slide.databaseRecord, imageTextLink:slide.databaseRecord, imageMaxWidth:imageMaxWidth, videoLink:slide.databaseRecord}" />
+                        </f:case>
+                    </f:switch>
+                </div>
+            </f:if>
+        </f:for>
+    </div>
+
+    <!-- Popup Slider Information -->
+    <div class="trailer-information" style="display: none;">
+        <f:for each="{slides}" as="slide">
+            <div class="trailer-info video-{slide.image.uid}-{slide.uid}">
+                <!-- Slide uid -->
+                <div data-uid="{slide.image.uid}-{slide.uid}"></div>
+
+                <!-- Slide Video Link -->
+                <div data-trailer="{slide.videoLink}"></div>
+            </div>
+        </f:for>
+    </div>
+</div>
+
+<script>
+    var sliders = sliders || [];
+
+    sliders.push({data.uid});
+</script>
+
+<f:comment>
+    <!-- Current Slider Settings -->
+    <script>
+        $(document).ready(function() {
+            var timing = $('#ocular-slider-{data.uid}').attr('data-timing');
+            var effect = $('#ocular-slider-{data.uid}').attr('data-effect');
+
+            var fadeEffect = false;
+            var verticalEffect = false;
+
+            if (effect == 0) {
+                fadeEffect = true;
+            } else if(effect == 1) {
+                //
+            } else if(effect == 2) {
+                verticalEffect = true;
+            }
+
+            $('#ocular-slider-{data.uid}').slick({
+                infinite: true,
+                speed: 1000,
+                dots: true,
+                autoplay: true,
+                fade: fadeEffect,
+                vertical: verticalEffect,
+                autoplaySpeed: timing,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                prevArrow: '<button type="button" class="slick-prev"><span class="fal fa-angle-left"></span></button>',
+                nextArrow: '<button type="button" class="slick-next"><span class="fal fa-angle-right"></span></button>',
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            dots: false
+                        }
+                    }
+                ]
+            });
+
+            $('.ocular-slider .ocular-slide').show();
+            $('.ocular-slider .ocular-slide .text-overlay-container').fadeIn();
+        });
+
+        $(window).resize(function() {
+            $('.ocular-slider .ocular-slide').show();
+        });
+    </script>
+</f:comment>
+
+<!-- New Updated Slider Settings (Waiting on upgrage of backend) -->
+<f:comment>
+    <script>
+        $(document).ready(function() {
+            // Grab the data Attribute of each setting
+            // Navigation Types
+            var dotsSlide = $('#ocular-slider-{data.uid}').attr('data-dots');
+            var arrowsSlide = $('#ocular-slider-{data.uid}').attr('data-arrows');
+
+            // Slide Effects
+            var vertSlide = $('#ocular-slider-{data.uid}').attr('data-vertical');
+            var fadeSlide = $('#ocular-slider-{data.uid}').attr('data-fade');
+
+            // Speed of Slider
+            var timingSlide = $('#ocular-slider-{data.uid}').attr('data-timing');
+
+            $('#ocular-slider-{data.uid}').slick({
+                infinite: true,
+                speed: 1000,
+                dots: dotsSlide,
+                arrows: arrowsSlide,
+                fade: fadeSlide,
+                vertical: vertSlide,
+                autoplay: true,
+                autoplaySpeed: timingSlide,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                prevArrow: '<button type="button" class="slick-prev"><span class="fal fa-angle-left"></span></button>',
+                nextArrow: '<button type="button" class="slick-next"><span class="fal fa-angle-right"></span></button>',
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            dots: false
+                        }
+                    }
+                ]
+            });
+
+            $('.ocular-slider .ocular-slide').show();
+        });
+    </script>
+</f:comment>

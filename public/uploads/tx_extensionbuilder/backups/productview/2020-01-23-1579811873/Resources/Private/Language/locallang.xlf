@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-01-23T20:35:36Z" product-name="productview">
+		<header/>
+		<body>
+			<trans-unit id="tx_productview_domain_model_category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_productview_domain_model_category.category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_productview_domain_model_product">
+				<source>Product</source>
+			</trans-unit>
+			<trans-unit id="tx_productview_domain_model_product.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_productview_domain_model_product.price">
+				<source>Price</source>
+			</trans-unit>
+			<trans-unit id="tx_productview_domain_model_product.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_productview_domain_model_product.start_date">
+				<source>Start Date</source>
+			</trans-unit>
+			<trans-unit id="tx_productview_domain_model_product.end_date">
+				<source>End Date</source>
+			</trans-unit>
+			<trans-unit id="tx_productview_domain_model_product.featured_event">
+				<source>Featured Event</source>
+			</trans-unit>
+			<trans-unit id="tx_productview_domain_model_product.categories">
+				<source>Categories</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

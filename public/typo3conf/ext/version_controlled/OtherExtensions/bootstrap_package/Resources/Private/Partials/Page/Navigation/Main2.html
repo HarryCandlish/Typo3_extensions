@@ -1,0 +1,76 @@
+<div id="topBar">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-md-6">
+				<div class="info-left">
+
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<div class="info-right">
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<header class="header clearfix">
+	<div class="container">
+		<div class="header-wrap flex flex-sp-between flex-center-y">
+			<div class="logo">
+				<f:if condition="{settings.logo.file}">
+					<f:then>
+						<f:link.page pageUid="{rootPage}">
+							<img src="{f:uri.image(src: settings.logo.file)}" alt="{logoAlt}" height="{settings.logo.height}" width="{settings.logo.width}">
+						</f:link.page>
+					</f:then>
+					<f:else>
+						<f:link.page pageUid="{rootPage}">{siteTitle}</f:link.page>
+					</f:else>
+				</f:if>
+			</div>
+
+			<f:if condition="{mainnavigation}">
+				<nav class="navigation clearfix">
+					<ul class="menu">
+						<f:for each="{mainnavigation}" as="mainnavigationItem">
+							<li class="{f:if(condition: mainnavigationItem.active, then:'active')}">
+								<f:if condition="{mainnavigationItem.children}">
+									<f:then>
+										<f:link.page pageUid="{mainnavigationItem.data.uid}" title="{mainnavigationItem.title}">
+											{mainnavigationItem.title}
+											<button class="sub-menu-toggle">
+												<i class="fa fa-caret-down"></i>
+											</button>
+										</f:link.page>
+										<ul class="sub-menu">
+											<f:for each="{mainnavigationItem.children}" as="child">
+												<li class="{f:if(condition: child.active, then:'active')}">
+													<f:link.page pageUid="{child.data.uid}" title="{child.title}">
+														{child.title}
+													</f:link.page>
+												</li>
+											</f:for>
+										</ul>
+									</f:then>
+									<f:else>
+										<f:link.page pageUid="{mainnavigationItem.data.uid}" title="{mainnavigationItem.title}">
+											{mainnavigationItem.title}
+										</f:link.page>
+									</f:else>
+								</f:if>
+							</li>
+						</f:for>
+					</ul>
+					<button id="menuToggle">
+						<span class="bar"></span>
+						<span class="bar"></span>
+						<span class="bar"></span>
+					</button>
+				</nav>
+			</f:if>
+		</div>
+	</div>
+
+</header>

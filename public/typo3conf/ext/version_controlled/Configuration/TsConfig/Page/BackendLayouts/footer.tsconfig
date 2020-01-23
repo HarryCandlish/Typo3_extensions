@@ -1,0 +1,38 @@
+#################################
+##### BACKENDLAYOUT: FOOTER #####
+#################################
+mod {
+    web_layout {
+        BackendLayouts {
+            footer {
+                title = Footer
+                config {
+                    backend_layout {
+                        colCount = 3
+                        rowCount = 1
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = Footer Logo
+                                        colPos = 0
+                                    }
+                                    2 {
+                                        name = Footer Col 1
+                                        colPos = 1
+                                    }
+                                    3 {
+                                        name = Footer Col 2
+                                        colPos = 2
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                icon = EXT:version_controlled/Resources/misc/icons/BackendLayouts/default.gif
+            }
+        }
+    }
+}
+

@@ -1,0 +1,44 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<table class="tx-productview" >
+	<tr>
+		<td>
+			<f:translate key="tx_productview_domain_model_product.name" />
+		</td>
+		<td>
+		{product.name}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_productview_domain_model_product.price" />
+		</td>
+		<td>
+		{product.price}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_productview_domain_model_product.start_date" />
+		</td>
+		<td>
+		{product.startDate -> f:format.date()}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_productview_domain_model_product.end_date" />
+		</td>
+		<td>
+		{product.endDate -> f:format.date()}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_productview_domain_model_product.featured_event" />
+		</td>
+		<td>
+		{product.featuredEvent}
+		</td>
+	</tr>
+</table>
+</html>

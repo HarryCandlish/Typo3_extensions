@@ -1,0 +1,95 @@
+{namespace dce=ArminVieweg\Dce\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+    <div class="row">
+        <div class="link-block-4 flex flex-wrap">
+            <f:for each="{field.blocks}" as="block" iteration="iterator">
+                <f:if condition="{field.blocks -> f:count()} == 1">
+                    <f:then>
+                        <div class="col-xs-12 no-padding link-block-container flex">
+                            <div class="set-text underline flex flex-col flex-sp-between">
+                                <div>
+                                    <div class="title"><f:link.typolink additionalAttributes="{id:'dlt_{contentObject.uid}_{iterator.index}'}" parameter="{block.link}">{block.title}</f:link.typolink></div>
+                                    <div class="body-text">
+                                        <f:format.html>{block.bodytext}</f:format.html>
+                                    </div>
+                                </div>
+
+                                <div class="read-more"><f:link.typolink additionalAttributes="{id:'dl_{contentObject.uid}_{iterator.index}'}" parameter="{block.link}">Read More</f:link.typolink></div>
+                            </div>
+                        </div>
+                    </f:then>
+                    <f:else>
+                        <f:if condition="{field.blocks -> f:count()} == 2">
+                            <f:then>
+                                <div class="col-xs-12 col-md-6 no-padding link-block-container flex">
+                                    <div class="set-text underline flex flex-col flex-sp-between">
+                                        <div>
+                                            <div class="title"><f:link.typolink additionalAttributes="{id:'dlt_{contentObject.uid}_{iterator.index}'}" parameter="{block.link}">{block.title}</f:link.typolink></div>
+                                            <div class="body-text">
+                                                <f:format.html>{block.bodytext}</f:format.html>
+                                            </div>
+                                        </div>
+
+                                        <div class="read-more"><f:link.typolink additionalAttributes="{id:'dl_{contentObject.uid}_{iterator.index}'}" parameter="{block.link}">Read More</f:link.typolink></div>
+                                    </div>
+                                </div>
+                            </f:then>
+                            <f:else>
+                                <f:if condition="{field.blocks -> f:count()} == 3">
+                                    <f:then>
+                                        <div class="col-xs-12 col-md-4 no-padding link-block-container flex">
+                                            <div class="set-text underline flex flex-col flex-sp-between">
+                                                <div>
+                                                    <div class="title"><f:link.typolink additionalAttributes="{id:'dlt_{contentObject.uid}_{iterator.index}'}" parameter="{block.link}">{block.title}</f:link.typolink></div>
+                                                    <div class="body-text">
+                                                        <f:format.html>{block.bodytext}</f:format.html>
+                                                    </div>
+                                                </div>
+
+                                                <div class="read-more"><f:link.typolink additionalAttributes="{id:'dl_{contentObject.uid}_{iterator.index}'}" parameter="{block.link}">Read More</f:link.typolink></div>
+                                            </div>
+                                        </div>
+                                    </f:then>
+                                    <f:else>
+                                        <f:if condition="{field.blocks -> f:count()} == 4">
+                                            <f:then>
+                                                <div class="col-xs-12 col-md-3 no-padding link-block-container flex">
+                                                    <div class="set-text underline flex flex-col flex-sp-between">
+                                                        <div>
+                                                            <div class="title"><f:link.typolink additionalAttributes="{id:'dlt_{contentObject.uid}_{iterator.index}'}" parameter="{block.link}">{block.title}</f:link.typolink></div>
+                                                            <div class="body-text">
+                                                                <f:format.html>{block.bodytext}</f:format.html>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="read-more"><f:link.typolink additionalAttributes="{id:'dl_{contentObject.uid}_{iterator.index}'}" parameter="{block.link}">Read More</f:link.typolink></div>
+                                                    </div>
+                                                </div>
+                                            </f:then>
+                                            <f:else>
+                                                <div class="col-xs-12 col-md-3 no-padding link-block-container flex">
+                                                    <div class="set-text underline flex flex-col flex-sp-between">
+                                                        <div>
+                                                            <div class="title"><f:link.typolink additionalAttributes="{id:'dlt_{contentObject.uid}_{iterator.index}'}" parameter="{block.link}">{block.title}</f:link.typolink></div>
+                                                            <div class="body-text">
+                                                                <f:format.html>{block.bodytext}</f:format.html>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="read-more"><f:link.typolink additionalAttributes="{id:'dl_{contentObject.uid}_{iterator.index}'}" parameter="{block.link}">Read More</f:link.typolink></div>
+                                                    </div>
+                                                </div>
+                                            </f:else>
+                                        </f:if>
+                                    </f:else>
+                                </f:if>
+                            </f:else>
+                        </f:if>
+                    </f:else>
+                </f:if>
+            </f:for>
+        </div>
+    </div>
+</f:section>

@@ -1,0 +1,112 @@
+{namespace dce=ArminVieweg\Dce\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+    <div class="image-and-text-dce">
+        <div class="image-and-text flex flex-wrap {field.colour}">
+            <f:if condition="{field.position} == 0">
+                <f:then>
+                    <f:for each="{dce:fal(field:'image', contentObject:contentObject)}" as="fileReference" iteration="iterator">
+                        <f:if condition="{field.imgLink}">
+                            <f:then>
+                                <f:link.typolink parameter="{field.imgLink}">
+                                    <div class="set-image bg-cover" style="background-image: url('{f:uri.image(src:'{fileReference.uid}',treatIdAsReference:'1')}');"></div>
+                                </f:link.typolink>
+                            </f:then>
+                            <f:else>
+                                <div class="col-xs-12 col-md-6 no-padding set-image bg-cover" style="background-image: url('{f:uri.image(src:'{fileReference.uid}',treatIdAsReference:'1')}');"></div>
+                            </f:else>
+                        </f:if>
+                    </f:for>
+
+                    <div class="col-xs-12 col-md-6 no-padding flex flex-center set-text-background">
+                        <div class="set-text">
+                            <div class="underline">
+                                <f:if condition="{field.title}">
+                                    <f:then>
+                                        <f:if condition="{field.titleLink}">
+                                            <f:then>
+                                                <div class="h1 title">
+                                                    <f:link.typolink parameter="{field.titleLink}">{field.title}</f:link.typolink>
+                                                </div>
+                                            </f:then>
+                                            <f:else>
+                                                <div class="h1 title">{field.title}</div>
+                                            </f:else>
+                                        </f:if>
+                                    </f:then>
+                                </f:if>
+
+                                <f:if condition="{field.bodytext}">
+                                    <f:then>
+                                        <div class="body-text">
+                                            <f:format.html>{field.bodytext}</f:format.html>
+                                        </div>
+
+                                        <f:if condition="{field.buttonLink}">
+                                            <f:then>
+                                                <f:link.typolink parameter="{field.buttonLink}" class="img-but">{field.buttonName}</f:link.typolink>
+                                            </f:then>
+                                        </f:if>
+                                    </f:then>
+                                </f:if>
+                            </div>
+                        </div>
+                    </div>
+                </f:then>
+            </f:if>
+
+            <f:if condition="{field.position} == 1">
+                <f:then>
+                    <div class="col-xs-12 col-md-6 no-padding flex flex-center set-text-background">
+                        <div class="set-text">
+                            <div class="underline">
+                                <f:if condition="{field.title}">
+                                    <f:then>
+                                        <f:if condition="{field.titleLink}">
+                                            <f:then>
+                                                <div class="h1 title">
+                                                    <f:link.typolink parameter="{field.titleLink}">{field.title}</f:link.typolink>
+                                                </div>
+                                            </f:then>
+                                            <f:else>
+                                                <div class="h1 title">{field.title}</div>
+                                            </f:else>
+                                        </f:if>
+                                    </f:then>
+                                </f:if>
+
+                                <f:if condition="{field.bodytext}">
+                                    <f:then>
+                                        <div class="body-text">
+                                            <f:format.html>{field.bodytext}</f:format.html>
+                                        </div>
+
+                                        <f:if condition="{field.buttonLink}">
+                                            <f:then>
+                                                <f:link.typolink parameter="{field.buttonLink}" class="img-but">{field.buttonName}</f:link.typolink>
+                                            </f:then>
+                                        </f:if>
+                                    </f:then>
+                                </f:if>
+                            </div>
+                        </div>
+                    </div>
+
+                    <f:for each="{dce:fal(field:'image', contentObject:contentObject)}" as="fileReference" iteration="iterator">
+                        <f:if condition="{field.imgLink}">
+                            <f:then>
+                                <f:link.typolink parameter="{field.imgLink}">
+                                    <div class="set-image bg-cover" style="background-image: url('{f:uri.image(src:'{fileReference.uid}',treatIdAsReference:'1')}');"></div>
+                                </f:link.typolink>
+                            </f:then>
+                            <f:else>
+                                <div class="col-xs-12 col-md-6 no-padding set-image bg-cover" style="background-image: url('{f:uri.image(src:'{fileReference.uid}',treatIdAsReference:'1')}');"></div>
+                            </f:else>
+                        </f:if>
+                    </f:for>
+                </f:then>
+            </f:if>
+        </div>
+    </div>
+</f:section>

@@ -1,0 +1,32 @@
+<f:comment>
+ Arguments:
+ - {slide}
+ - {image}
+ - {imageTitle}
+ - {imageText}
+ - {imageTextLink}
+ - {videoLink}
+ - {imageMaxWidth}
+</f:comment>
+
+<div class="ocular-slider-item slide-img-id-{image}" style="background:#333;">
+    <div class="slider-text-background"></div>
+
+    <div class="slider-text-container">
+        <div class="slider-text">
+            <div class="slider-title v-padding-sm">
+                <h3>{imageTitle}</h3>
+            </div>
+
+            <div class="slider-shortdesc v-padding-sm">
+                {imageText}
+            </div>
+
+            <div class="slider-readmore v-padding-sm">
+                <div class="video-button" data-button="video-{slide.uid}">
+                    Watch Trailer &gt;
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

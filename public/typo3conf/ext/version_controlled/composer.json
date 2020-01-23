@@ -1,0 +1,37 @@
+{
+    "name": "ocular-nz/version_controlled",
+    "description": "Version Controlled",
+    "version": "1.0.0",
+    "type": "typo3-cms-extension",
+    "license": "",
+    "authors": [
+        {
+            "name": "ocular",
+            "email": "tech@ocular.co.nz"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Ocular\\VersionControlled\\": "Classes/"
+        }
+    },
+    "replace": {
+        "version_controlled": "self.version",
+        "typo3-ter/version_controlled": "self.version"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "mkdir -p .Build/Web/typo3conf/ext/",
+            "[ -L .Build/Web/typo3conf/ext/version_controlled ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/version_controlled"
+        ]
+    },
+    "extra": {
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": ".Build/Web"
+        }
+    }
+
+}

@@ -1,0 +1,18 @@
+{namespace dce=ArminVieweg\Dce\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+    <div class="textAndLink">
+        <div class="heading h2">{field.heading}</div>
+        <div class="body">
+            <f:format.html>{field.body}</f:format.html>
+        </div>
+        <f:if condition="{field.url}">
+            <f:then>
+                <div class="url">
+                    <f:link.typolink parameter="{field.url}">Read More</f:link.typolink>
+                </div>
+            </f:then>
+        </f:if>
+    </div>
+</f:section>

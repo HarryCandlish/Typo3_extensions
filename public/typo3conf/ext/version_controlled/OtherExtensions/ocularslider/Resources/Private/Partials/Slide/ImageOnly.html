@@ -1,0 +1,11 @@
+<f:comment>
+ Arguments:
+ - {slide.image}
+ - {imageMaxWidth}
+</f:comment>
+
+<div class="ocular-slider-item slide-img-id-{slide.image.uid} image-only">
+    <f:link.typolink class="image-only-link" parameter="{slide.imageTextLink}">
+        <f:image image="{slide.image}" title="{slide.image.originalResource.title}" alt="{slide.image.originalResource.description}"></f:image>
+    </f:link.typolink>
+</div>

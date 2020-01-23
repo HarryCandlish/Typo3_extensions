@@ -1,0 +1,56 @@
+{namespace dce=ArminVieweg\Dce\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+    <div class="members members-{contentObject.uid}">
+        <div class="row flex flex-wrap">
+            <f:for each="{field.members}" as="member" iteration="iterator">
+                <div class="col-xs-12 col-md-6 border-bottom">
+                    <div class="row v-padding-md">
+                        <div class="col-xs-12 col-sm-4">
+                            <f:if condition="{member.logo}">
+                                <f:then>
+                                    <f:link.typolink parameter="{member.website}">
+                                        <f:image src="/fileadmin/{member.logo.0.identifier}" alt="" />
+                                    </f:link.typolink>
+                                </f:then>
+                                <f:else>
+                                    <div class="replaceName">{member.name}</div>
+                                </f:else>
+                            </f:if>
+                            <f:if condition="{member.phone}">
+                                <f:then>
+                                    <div class="phone">
+                                        <h5>Phone</h5>
+                                        <p>{member.phone}</p>
+                                    </div>
+                                </f:then>
+                            </f:if>
+                            <f:if condition="{member.fax}">
+                                <f:then>
+                                    <div class="fax">
+                                        <h5>Fax</h5>
+                                        <p>{member.fax}</p>
+                                    </div>
+                                </f:then>
+                            </f:if>
+                        </div>
+                        <div class="col-xs-12 col-sm-8">
+                            <div class="name">{member.name}</div>
+                            <div class="address">
+                                <f:format.html>{member.address}</f:format.html>
+                            </div>
+                            <f:if condition="{member.website}">
+                                <f:then>
+                                    <div class="website">
+                                        <f:link.typolink parameter="{member.website}">Visit Website</f:link.typolink>
+                                    </div>
+                                </f:then>
+                            </f:if>
+                        </div>
+                    </div>
+                </div>
+            </f:for>
+        </div>
+    </div>
+</f:section>

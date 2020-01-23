@@ -1,0 +1,26 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<label for="name">
+	<f:translate key="tx_productview_domain_model_product.name" />
+</label><br />
+	<f:form.textfield property="name" /><br />
+<label for="price">
+	<f:translate key="tx_productview_domain_model_product.price" />
+</label><br />
+	<f:form.textfield property="price" /><br />
+<label for="startDate">
+	<f:translate key="tx_productview_domain_model_product.start_date" />
+</label><br />
+	<f:form.textfield property="startDate" value="{product.startDate->f:format.date()}" /><br />
+<label for="endDate">
+	<f:translate key="tx_productview_domain_model_product.end_date" />
+</label><br />
+	<f:form.textfield property="endDate" value="{product.endDate->f:format.date()}" /><br />
+<label for="inStore">
+	<f:translate key="tx_productview_domain_model_product.in_store" />
+</label><br />
+	<f:form.checkbox property="inStore" value="1" /><br />
+<label for="image">
+	<f:translate key="tx_productview_domain_model_product.image" />
+</label><br />
+	<span>File upload is not implemented!</span><br  /><br />
+</html>

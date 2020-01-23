@@ -1,0 +1,80 @@
+# Logo Location
+page.logo.file = /fileadmin/templates/img/logo.svg
+page.logo.alt = Logo
+page.logo.height = 50
+page.logo.width = 226
+
+# Copyright
+# page.theme.copyright.text = Proudly powered by <a href="http://www.typo3.org" target="_blank">TYPO3 CMS</a>
+
+# Other
+config.contentObjectExceptionHandler = 0
+config.preloadImages = 1
+
+# Sets Fonts
+plugin.bootstrap_package.settings.less.font-family-sans-serif = "Lato", Helvetica, Arial, sans-serif
+plugin.bootstrap_package.settings.less.headings-font-family = "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif
+plugin.bootstrap_package.settings.less.font-family-serif = "Lato", Helvetica, Arial, sans-serif
+
+# BootStrap Templates
+page.fluidtemplate.layoutRootPath = EXT:version_controlled/OtherExtensions/bootstrap_package/Resources/Private/Layouts/Page/
+page.fluidtemplate.partialRootPath = EXT:version_controlled/OtherExtensions/bootstrap_package/Resources/Private/Partials/Page/
+page.fluidtemplate.templateRootPath = EXT:version_controlled/OtherExtensions/bootstrap_package/Resources/Private/Templates/Page/
+plugin.tx_felogin_pi1.storagePid = 0
+plugin.tx_felogin_pi1.templateFile = EXT:version_controlled/OtherExtensions/bootstrap_package/Private/Templates/Felogin/FrontendLogin.html
+plugin.bootstrap_package_contentelements.view.layoutRootPath = EXT:version_controlled/OtherExtensions/bootstrap_package/Private/Layouts/ContentElements/
+plugin.bootstrap_package.view.layoutRootPath = EEXT:version_controlled/OtherExtensions/bootstrap_package/Private/Layouts/
+plugin.bootstrap_package_contentelements.view.partialRootPath = EXT:version_controlled/OtherExtensions/bootstrap_package/Private/Partials/ContentElements/
+plugin.bootstrap_package.view.partialRootPath = EXT:version_controlled/OtherExtensions/bootstrap_package/Private/Partials/
+plugin.bootstrap_package.view.templateRootPath = EXT:version_controlled/OtherExtensions/bootstrap_package/Private/Templates/
+plugin.bootstrap_package_contentelements.view.templateRootPath = EXT:version_controlled/OtherExtensions/bootstrap_package/Private/Templates/ContentElements/
+
+#Extras
+page.theme.navigationtype =
+page.theme.news.list.maxWInText = 0
+page.theme.breadcrumb = 0
+page.theme.copyright.enable = 0
+page.theme.footersection.enable = 0
+page.theme.metasection.enable = 0
+page.theme.language.languageValue = 0
+
+# Powermail
+plugin.tx_powermail.settings.receiver.overwrite.senderEmail = sender@ocular.co.nz
+
+# Ocular Slider
+plugin.ocularslider_slider.limits.imageMaxWidth = 1920
+plugin.ocularslider_slider.view {
+    layoutRootPath = EXT:version_controlled/OtherExtensions/ocularslider/Resources/Private/Layouts/
+    partialRootPath = EXT:version_controlled/OtherExtensions/ocularslider/Resources/Private/Partials/
+    templateRootPath = EXT:version_controlled/OtherExtensions/ocularslider/Resources/Private/Templates/
+}
+
+page.preloader.enable = 0
+
+# News templates
+plugin.tx_news.view {
+    layoutRootPath = EXT:version_controlled/OtherExtensions/news/Resources/Private/Layouts/
+    partialRootPath = EXT:version_controlled/OtherExtensions/news/Resources/Private/Partials/
+    templateRootPath = EXT:version_controlled/OtherExtensions/news/Resources/Private/Templates/
+}
+
+plugin.tx_news.settings.cssFile >
+
+# pb_social templates
+plugin.tx_pbsocial.view {
+    layoutRootPath = EXT:version_controlled/OtherExtensions/pb_social/Resources/Private/Layouts/
+    partialRootPath = EXT:version_controlled/OtherExtensions/pb_social/Resources/Private/Partials/
+    templateRootPath = EXT:version_controlled/OtherExtensions/pb_social/Resources/Private/Templates/
+}
+
+# events templates
+plugin.tx_events_listevents.view {
+    layoutRootPath = EXT:version_controlled/OtherExtensions/events/Resources/Private/Layouts/
+    partialRootPath = EXT:version_controlled/OtherExtensions/events/Resources/Private/Partials/
+    templateRootPath = EXT:version_controlled/OtherExtensions/events/Resources/Private/Templates/
+}
+plugin.tx_events.view {
+    layoutRootPath = EXT:version_controlled/OtherExtensions/events/Resources/Private/Layouts/
+    partialRootPath = EXT:version_controlled/OtherExtensions/events/Resources/Private/Partials/
+    templateRootPath = EXT:version_controlled/OtherExtensions/events/Resources/Private/Templates/
+}

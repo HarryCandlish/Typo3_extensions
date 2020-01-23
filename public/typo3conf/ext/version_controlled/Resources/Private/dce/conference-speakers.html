@@ -1,0 +1,64 @@
+{namespace dce=ArminVieweg\Dce\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+    <div class="container">
+        <div class="row speaker-items">
+            <f:for each="{field.speakers}" as="speaker" iteration="iterator">
+                <div class="speaker-item-wrap col-xs-12 col-sm-6 col-md-3">
+                    <div class="speaker-item">
+                        <div class="speaker-img"  title="{speaker.name}" >
+                            <f:image image="{speaker.photo.0}"  class="image" alt="" />
+
+                            <div class="hover">
+                                <div class="crosshair">
+                                    <div class="crosshair-inner">
+                                        <div class="circle">
+                                        </div>
+
+                                        <div class="cross">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="speaker-name"  title="{speaker.name}">
+                            <h4>{speaker.name}</h4>
+                        </div>
+
+                        <div class="speaker-company"  title="{speaker.name}">
+                            <h4>{speaker.company}</h4>
+                        </div>
+                    </div>
+
+                    <div class="speaker-desc">
+                        <div class="speaker-desc-container container">
+                            <div class="row">
+                                <div class="speaker-desc-left col-xs-12 col-sm-6 col-md-4">
+                                    <div class="speaker-desc-img">
+                                        <f:image image="{speaker.photo.0}" class="image" alt="" />
+                                    </div>
+                                </div>
+
+                                <div class="speaker-desc-right col-xs-12 col-sm-6 col-md-8">
+                                    <div class="speaker-desc-name">
+                                        <h3>{speaker.name}</h3>
+                                    </div>
+
+                                    <div class="speaker-desc-job">
+                                        <h4>{speaker.company}</h4>
+                                    </div>
+
+                                    <div class="speaker-desc-body"><f:format.html>{speaker.description}</f:format.html></div>
+                                </div>
+                            </div>
+
+                            <span class="close-modal">&times;</span>
+                        </div>
+                    </div>
+                </div>
+            </f:for>
+        </div>
+    </div>
+</f:section>

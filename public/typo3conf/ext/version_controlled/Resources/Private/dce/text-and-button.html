@@ -1,0 +1,41 @@
+{namespace dce=ArminVieweg\Dce\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+    <div class="text-and-button-dce">
+        <div class="set-text">
+            <div class="underline">
+                <f:if condition="{field.header}">
+                    <f:then>
+                        <f:if condition="{field.headerLink}">
+                            <f:then>
+                                <div class="h1 title">
+                                    <f:link.typolink parameter="{field.headerLink}">{field.header}</f:link.typolink>
+                                </div>
+                            </f:then>
+                            <f:else>
+                                <div class="h1 title">{field.header}</div>
+                            </f:else>
+                        </f:if>
+                    </f:then>
+                </f:if>
+
+                <f:if condition="{field.bodytext}">
+                    <f:then>
+                        <div class="body-text">
+                            <f:format.html>{field.bodytext}</f:format.html>
+                        </div>
+
+                        <f:if condition="{field.buttonLink}">
+                            <f:then>
+                                <div class="read-more">
+                                    <f:link.typolink parameter="{field.buttonLink}" class="img-but">{field.buttonName}</f:link.typolink>
+                                </div>
+                            </f:then>
+                        </f:if>
+                    </f:then>
+                </f:if>
+            </div>
+        </div>
+    </div>
+</f:section>

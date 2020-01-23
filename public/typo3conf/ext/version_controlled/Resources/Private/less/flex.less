@@ -1,0 +1,72 @@
+// .flex : master class needed for all Flex subclasses
+.flex {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+
+	// .flex-wrap : wraps child elements, useful on .row elements to wrap .col-xx child elements
+	&-wrap {
+		-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+	}
+
+	// .flex-col : changes flex-direction to column orientation
+	&-col {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+				flex-direction: column;
+	}
+
+	// .flex-center : places child elements in the absolute center of the parent
+	&-center {
+		-webkit-box-align: center;
+			-ms-flex-align: center;
+				align-items: center;
+		-webkit-box-pack: center;
+			-ms-flex-pack: center;
+				justify-content: center;
+
+		// .flex-center-y : places child elements in the center on the Y axis (X axis if .flex-col is used), X axis is unaffected
+		&-y {
+			-webkit-box-align: center;
+				-ms-flex-align: center;
+					align-items: center;
+		}
+
+		// .flex-center-x : places child elements in the center on the X axis (Y axis if .flex-col is used), Y axis is unaffected
+		&-x {
+			-webkit-box-pack: center;
+				-ms-flex-pack: center;
+					justify-content: center;
+		}
+	}
+
+	// .flex-sp-between : spaces child elements to fit across X axis (Y axis if .flex-col is used) and adds even space between each element
+	&-sp-between {
+		-webkit-box-pack: justify;
+			-ms-flex-pack: justify;
+				justify-content: space-between;
+	}
+
+	// .flex-end : places all child elements at the very end of the parent element (bottom right corner)
+	&-end {
+		justify-content: flex-end;
+		align-items: flex-end;
+
+		// .flex-end-x : places all child elements at the end of the X axis (Y axis if .flex-col is used)
+		&-x {
+			justify-content: flex-end;
+		}
+
+		// .flex-end-y : places all child elements at the end of the Y axis (X axis if .flex-col is used)
+		&-y {
+			align-items: flex-end;
+		}
+	}
+
+	// .flex-1 : allows a child element to take up as much space as possible
+	&-1 {
+		flex: 1;
+	}
+}

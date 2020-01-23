@@ -1,0 +1,28 @@
+{namespace dce=ArminVieweg\Dce\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+    <div id="dce_tb_{contentObject.uid}" class="row">
+        <div class="image-and-text flex flex-wrap {field.colour}">
+            <div class="col-xs-12 flex flex-center set-text-background">
+                <div class="set-text conference-container">
+                    <div class="underline">
+                        <f:if condition="{field.title}">
+                            <f:then>
+                                <div class="title">{field.title}</div>
+                            </f:then>
+                        </f:if>
+
+                        <f:if condition="{field.bodytext}">
+                            <f:then>
+                                <div class="body-text">
+                                    <f:format.html>{field.bodytext}</f:format.html>
+                                </div>
+                            </f:then>
+                        </f:if>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</f:section>

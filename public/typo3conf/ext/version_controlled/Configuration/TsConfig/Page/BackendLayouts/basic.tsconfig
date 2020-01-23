@@ -1,0 +1,37 @@
+##############################
+#### BACKENDLAYOUT: BASIC ####
+##############################
+mod {
+    web_layout {
+        BackendLayouts {
+            basic {
+                title = Basic
+                config {
+                    backend_layout {
+                        colCount = 1
+                        rowCount = 2
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = Banner
+                                        colPos = 0
+                                    }
+                                }
+                            }
+                            2 {
+                                columns {
+                                    1 {
+                                        name = Full Content
+                                        colPos = 1
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                icon = EXT:version_controlled/Resources/misc/icons/BackendLayouts/basic.gif
+            }
+        }
+    }
+}

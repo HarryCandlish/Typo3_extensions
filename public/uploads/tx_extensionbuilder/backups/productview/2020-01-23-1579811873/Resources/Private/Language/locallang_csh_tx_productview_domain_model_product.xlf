@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-01-23T20:35:36Z" product-name="productview">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="price.description">
+				<source>price</source>
+			</trans-unit>
+			<trans-unit id="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="start_date.description">
+				<source>startDate</source>
+			</trans-unit>
+			<trans-unit id="end_date.description">
+				<source>endDate</source>
+			</trans-unit>
+			<trans-unit id="featured_event.description">
+				<source>featuredEvent</source>
+			</trans-unit>
+			<trans-unit id="categories.description">
+				<source>categories</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

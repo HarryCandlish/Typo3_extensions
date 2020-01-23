@@ -1,0 +1,12 @@
+<f:layout name="Default"/>
+<f:section name="Main">
+
+    <div id="banner">
+        <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
+    </div>
+    
+    <div class="container v-padding-md">
+        <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '1'}"/>
+    </div>
+
+</f:section>

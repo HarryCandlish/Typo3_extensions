@@ -1,0 +1,32 @@
+rootPageId: 2
+base: /
+baseVariants: {  }
+languages:
+  -
+    title: English
+    enabled: true
+    languageId: '0'
+    base: /
+    typo3Language: default
+    locale: en_US.UTF-8
+    iso-639-1: ab
+    navigationTitle: ''
+    hreflang: ''
+    direction: ''
+    flag: global
+errorHandling: {  }
+routes: {  }
+routeEnhancers:
+  NewsPlugin:
+    type: Extbase
+    limitToPages: [40]
+    extension: News
+    plugin: Pi1
+    routes:
+      - { routePath: '/{news_title}', _controller: 'News::detail', _arguments: {'news_title': 'news'} }
+    defaultController: 'News::detail'
+    aspects:
+      news_title:
+        type: PersistedAliasMapper
+        tableName: 'tx_news_domain_model_news'
+        routeFieldName: 'path_segment'

@@ -1,0 +1,14 @@
+{namespace dce=ArminVieweg\Dce\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+    <div class="conference-banner dce-blue-background">
+        <div class="set-text-background">
+            <div class="underline">
+                <div class="title"><f:format.nl2br>{field.title}</f:format.nl2br></div>
+                <div class="body-text"><f:format.html>{field.content}</f:format.html></div>
+                <div id="jumpToContent"><div class="chevron"></div></div>
+            </div>
+        </div>
+    </div>
+</f:section>

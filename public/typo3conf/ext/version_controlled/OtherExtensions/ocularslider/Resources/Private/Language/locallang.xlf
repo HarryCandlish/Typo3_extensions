@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-10-12T16:27:05Z" product-name="ocularslider">
+		<header/>
+		<body>
+			<trans-unit id="tx_ocularslider_domain_model_slider">
+				<source>Slider</source>
+			</trans-unit>
+			<trans-unit id="tx_ocularslider_domain_model_slider.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_ocularslider_domain_model_slider.slides">
+				<source>Slides</source>
+			</trans-unit>
+			<trans-unit id="tx_ocularslider_domain_model_slide">
+				<source>Slide</source>
+			</trans-unit>
+			<trans-unit id="tx_ocularslider_domain_model_slide.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_ocularslider_domain_model_slide.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_ocularslider_domain_model_slide.slide_type">
+				<source>Slide Type</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

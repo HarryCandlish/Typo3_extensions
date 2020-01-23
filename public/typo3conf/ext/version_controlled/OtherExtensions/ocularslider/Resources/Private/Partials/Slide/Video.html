@@ -1,0 +1,52 @@
+<f:comment>
+ Arguments:
+ - {slide.image}
+ - {slide.videoLink}
+ - {slide.title}
+ - {slide.imageText}
+ - {slide.imageTextLink}
+ - {imageMaxWidth}
+ (video iframe is added inside: EXT:ocularslider/Resources/Private/Templates/Slider/Display.html)
+</f:comment>
+
+<div class="ocular-slider-item slide-img-id-{slide.image.uid} image-text-and-video">
+    <f:image image="{slide.image}" title="{slide.image.originalResource.title}" alt="{slide.image.originalResource.description}"></f:image>
+
+    <div class="text-overlay flex flex-center-y container">
+        <div class="text-overlay-container">
+            <f:if condition="{slide.title}">
+                <div class="slide-title h3">{slide.title}</div>
+            </f:if>
+
+            <f:if condition="{slide.imageText}">
+                <div class="slide-description">
+                    <f:format.crop maxCharacters="250">{slide.imageText}</f:format.crop>
+                </div>
+            </f:if>
+
+            <f:if condition="{slide.additionalText}">
+                <div class="slide-additional-text">
+                    {slide.additionalText}
+                </div>
+            </f:if>
+
+            <f:if condition="{slide.imageTextLink}">
+                <div class="slide-buttons">
+                    <div class="row">
+                        <div class="col-xs-6 left-button">
+                            <f:if condition="{slide.buttonText}">
+                                <f:link.typolink parameter="{slide.imageTextLink}" class="slide-button link-button">{slide.buttonText}</f:link.typolink>
+                            </f:if>
+                        </div>
+
+                        <div class="col-xs-6 right-button">
+                            <f:if condition="{slide.videoLink}">
+                                <div class="slide-button video-button" id="video-{slide.image.uid}" data-button="video-{slide.image.uid}-{slide.uid}">Watch Here</div>
+                            </f:if>
+                        </div>
+                    </div>
+                </div>
+            </f:if>
+        </div>
+    </div>
+</div>

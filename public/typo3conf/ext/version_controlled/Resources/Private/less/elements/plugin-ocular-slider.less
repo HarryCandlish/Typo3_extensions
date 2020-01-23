@@ -1,0 +1,230 @@
+// Dots
+@dot-color: #000;
+@dot-color-active: @brand-color;
+
+// Arrows
+@arrow-color: #fff;
+@arrow-size: 40px;
+
+// Buttons
+@button-color: @brand-color;
+
+.ocular-slider {
+    position: relative;
+    .slide-hide {
+        display: none;
+    }
+
+    // Image Only
+    .image-only {
+        &-link {
+            display: block;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    // Image and text
+    // Video Popup
+    .image-and-text,
+    .image-text-and-video {
+        position: relative;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .text-overlay {
+            position: absolute;
+            top: 0; bottom: 0;
+            left: 0; right: 0;
+            &-container {
+                padding: 15px;
+                width: 100%;
+                display: none;
+                @media @smScreen {
+                    //margin-left: 45px;
+                    border-left: 15px solid @brand-color;
+                    background-color: #fff;
+                    width: 400px;
+                }
+                .slide-title,
+                .slide-description, 
+                .slide-additional-text {
+                    display: none; 
+                    @media @smScreen {
+                        display: block;
+                    }
+                }
+                .slide-buttons {
+                    .left-button,
+                    .right-button,
+                    .full-button {
+                        text-align: center;
+                        @media @smScreen {
+                            text-align: left;
+                        }
+                        .slide-button {
+                            color: #fff;
+                            display: inline-block;
+                            padding: 7px 15px;
+                            background-color: @button-color;
+                            @media @smScreen {
+                                background-color: transparent;
+                                padding: 0;
+                                color: @brand-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .image-text-and-video {
+        .text-overlay {
+           .right-button {
+               .video-button {
+                //    color: @brand-color;
+                   &:hover {
+                    //    color: lighten(@brand-color, 10%);
+                       cursor: pointer;
+                   }
+               }
+           } 
+        }
+    }
+
+    //  General Settings
+    // Arrows
+    .slick-arrow {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 100;
+
+        background-color: transparent;
+        color: @arrow-color;
+        border: none;
+        font-size: @arrow-size;
+        padding-left: 15px;
+        padding-right: 15px;
+        opacity: 0;
+        transition: opacity 500ms;        
+        &.slick-prev {
+            left: 0;
+            background: -moz-linear-gradient(left, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(left, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to right, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+        }
+        &.slick-next {
+            right: 0;
+            background: -moz-linear-gradient(right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(right, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to left, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+
+    // Dots
+    ul.slick-dots {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        -webkit-margin-before: 0;
+        -webkit-margin-after: 0;
+        -webkit-margin-start: 0;
+        -webkit-margin-end: 0;
+        -webkit-padding-start: 0;
+
+        position: absolute;
+        bottom: 15px;
+        left: 0; right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+
+        opacity: 0;
+        transition: opacity 500ms;  
+        li {
+            display: inline-block;
+            margin-right: 15px;
+            button {
+                background-color: @dot-color;
+                border: none;
+                border-radius: 50%;
+                height: 30px;
+                width: 30px;
+                color: #fff;
+                text-align: center;
+                &:focus {
+                    outline: none;
+                }
+            }
+            &.slick-active {
+                button {
+                    background-color: @dot-color-active;
+                    color: #000;
+                }
+            }
+        }
+    }
+
+    // Show arrows and dots on hover of banner
+    &:hover {
+        .slick-arrow,
+        .slick-dots {
+            opacity: 1;
+            transition: opacity 500ms;
+        }
+    }
+}
+
+// Video Popup
+#ocular-slide-video-popup {
+    position: fixed;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    z-index: 1000000;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    .fill-out {
+        position: absolute;
+        top: 0; bottom: 0;
+        right: 0; left: 0;
+        .pop-video {
+            max-width: 1000px;
+            width: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
+            .close-video {
+                text-align: right;
+                color: #fff;
+                font-size: 20px;
+                padding: 5px;
+                &:hover {
+                    color: darken(#fff, 10%);
+                    cursor: pointer;
+                }
+            }
+            .full-width-video {
+                position: relative;
+                padding-bottom: 56.25%; /* 16:9 */
+                padding-top: 25px;
+                height: 0;
+                iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

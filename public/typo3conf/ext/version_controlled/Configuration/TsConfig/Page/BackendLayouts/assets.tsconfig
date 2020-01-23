@@ -1,0 +1,63 @@
+###############################
+#### BACKENDLAYOUT: ASSETS ####
+###############################
+mod {
+    web_layout {
+        BackendLayouts {
+            assets {
+                title = Assets
+                config {
+                    backend_layout {
+                        colCount = 6
+                        rowCount = 2
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = Top Bar Left
+                                        colPos = 0
+                                        colspan = 3
+                                    }
+                                    2 {
+                                        name = Top Bar Right
+                                        colPos = 1
+                                        colspan = 3
+                                    }
+                                }
+                            }
+                            2 {
+                                columns {
+                                    1 {
+                                        name = Footer 1
+                                        colPos = 2
+                                    }
+                                    2 {
+                                        name = Footer 2
+                                        colPos = 3
+                                    }
+                                    3 {
+                                        name = Footer 3
+                                        colPos = 4
+                                    }
+                                    4 {
+                                        name = Footer 4
+                                        colPos = 5
+                                    }
+                                    5 {
+                                        name = Footer 5
+                                        colPos = 6
+                                    }
+                                    6 {
+                                        name = Footer 6
+                                        colPos = 7
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                icon = EXT:version_controlled/Resources/misc/icons/BackendLayouts/basic.gif
+            }
+        }
+    }
+}

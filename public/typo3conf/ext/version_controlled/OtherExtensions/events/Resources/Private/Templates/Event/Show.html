@@ -1,0 +1,29 @@
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <article>
+        <f:if condition="{event.heroImage}">
+            <f:image image="{event.heroImage}" class="img-responsive" />
+        </f:if>
+
+        <h1>{event.name}</h1>
+
+        <ul>
+            <li>
+                <strong>Starts: </strong>
+                <time>{f:format.date(date: event.dateStart, format: 'd F Y')}</time>
+            </li>
+            <f:if condition="{event.dateEnd}">
+                <li>
+                    <strong>Ends: </strong>
+                    <time>{f:format.date(date: event.dateEnd, format: 'd F Y')}</time>
+                </li>
+            </f:if>
+            <li>
+                <f:link.action action="downloadCalendar" arguments="{event:event}" class="buttonlink" class="event-button">Add to my calendar</f:link.action>
+            </li>
+        </ul>
+
+        <f:format.raw>{event.body}</f:format.raw>
+    </article>
+</f:section>

@@ -58,7 +58,8 @@
         "psr-4": {
             "Ocular\\VersionControlled\\": "public/typo3conf/ext/version_controlled/Classes/",
             "MyVendor\\StoreInventory\\": "public/typo3conf/ext/store_inventory/Classes/",
-            "Product\\Productview\\": "public/typo3conf/ext/productview/Classes/"
+            "Product\\Productview\\": "public/typo3conf/ext/productview/Classes/",
+            "EditForm\\Editform\\":"public/typo3conf/ext/editform/Classes/"
 
         }
     },

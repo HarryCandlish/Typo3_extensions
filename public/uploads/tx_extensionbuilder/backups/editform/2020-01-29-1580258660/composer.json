@@ -1,0 +1,23 @@
+{
+    "name": "editform/editform",
+    "type": "typo3-cms-extension",
+    "description": "A form that can be edited ",
+    "authors": [],
+    "require": {
+        "typo3/cms-core": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "EditForm\\Editform\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "EditForm\\Editform\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "editform/editform": "self.version",
+        "typo3-ter/editform": "self.version"
+    }
+}
